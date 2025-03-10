@@ -20,16 +20,17 @@ export function filterNoImages(data: any[]) {
     return data.filter((data) => data.images.length > 0);
 }
 
-export async function searchArtist(name: string) {
+export async function getArtistsAlbums(name: string) {
     const token = await getAccessToken();
     const response = await fetch(
-      `https://api.spotify.com/v1/search?q=${encodeURIComponent(name)}&type=artist%2Calbum&limit=30`,
-      {
-        headers: { Authorization: `Bearer ${token}` }
-      }
+      `https://api.spotify.com/v1/artists/${name}/albums`,
+      { headers: { Authorization: `Bearer ${token}` } }
     );
-  
+
     const data = await response.json();
-    const filteredArtists = filterNoImages(data.artists.items);
-    return filteredArtists;
+    const filteredAlbums = filterNoImages(data.items);
+    return filteredAlbums;
   }
+  
+  
+  

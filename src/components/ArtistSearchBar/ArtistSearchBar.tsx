@@ -1,16 +1,31 @@
 import React, { useState } from "react";
 import { useArtist } from "../../utilites/ArtistContext";
+import { useAlbum } from "../../utilites/AlbumContext";
+
 import "./styles.css";
 
 const ArtistSearchBar = () => {
   const [searchInput, setSearchInput] = useState("");
   const { setCurrentArtist } = useArtist();
+  const { setArtistObject } = useAlbum();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchInput.trim()) {
       setCurrentArtist(searchInput);
+      setArtistObject({
+        id: "",
+        name: "",
+      });
     }
+  };
+
+  const handleClear = () => {
+    setSearchInput("");
+    setArtistObject({
+      id: "",
+      name: "",
+    });
   };
 
   return (
@@ -26,6 +41,9 @@ const ArtistSearchBar = () => {
         />
         <button type="submit" className="search-button">
           Search
+        </button>
+        <button type="button" className="clear-button" onClick={handleClear}>
+          Clear
         </button>
       </form>
     </div>
