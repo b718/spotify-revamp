@@ -13,14 +13,14 @@ export async function getArtistInfo(artistName: string) {
     const refs = doc.querySelectorAll(".reference");
     refs.forEach((ref) => ref.remove());
 
-    const paragraphs = doc.querySelectorAll("p");
+    const allParagraphs = doc.querySelectorAll("p");
 
-    const firstParagraphs = Array.from(paragraphs)
+    const firstParagraphs = Array.from(allParagraphs)
       .filter((p) => {
         const text = p.textContent?.trim();
         return text && text.length > 0;
       })
-      .slice(0, 1)
+      .slice(0, 2)
       .map((p) => p.outerHTML)
       .join("");
 
