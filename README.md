@@ -23,3 +23,9 @@ This was one the first project that got me into programming, so I thought how co
 - Netlify (super easy and allows me to deploy in minutes)
 
 ## Video Demo
+
+
+
+https://github.com/user-attachments/assets/333a3faf-8494-4234-9274-7ec8fe463dcf
+
+
