@@ -1,6 +1,6 @@
 ## Spotify Revamp
 
-This was one the first project that got me into programming, so I thought how cool would it be to rebuild it again with the new knowledge that I gained!
+This was the first project that got me into programming, so I thought how cool would it be to rebuild it again with the new knowledge that I gained!
 
 ## Tech Stack
 
