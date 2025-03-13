@@ -1,0 +1,119 @@
+.artist-container {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.artist-header {
+  height: 25rem;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+  padding: 2rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+.artist-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.artist-header-content {
+  position: relative;
+  z-index: 1;
+}
+
+.artist-header h1 {
+  font-size: 4rem;
+  margin: 0;
+  font-weight: 700;
+  text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.5);
+}
+
+.artist-stats {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.genre-tag {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  margin-right: 0.5rem;
+  margin-top: 1rem;
+  display: inline-block;
+  backdrop-filter: blur(0.625rem);
+}
+
+.artist-nav {
+  background: white;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  border-bottom: 0.0625rem solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.nav-button.active {
+  color: #1db954;
+  border-bottom: 0.125rem solid #1db954;
+}
+
+.artist-content {
+  padding: 2rem;
+}
+
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+@media (max-width: 48rem) {
+  .artist-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .artist-nav {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .stats-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.artist-loading {
+  text-align: center;
+  padding: 1.5rem; /* 24px */
+}

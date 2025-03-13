@@ -1,7 +1,8 @@
 import "./App.css";
 import DisplaySongs from "./components/DisplaySongs/DisplaySongs";
 import ArtistSearchBar from "./components/ArtistSearchBar/ArtistSearchBar";
-import DisplayAlbums from "./components/DisplayAlbums/DisplayAlbums";
+import DisplayArtistInfo from "./components/DisplayArtistInfo/DisplayArtistInfo";
+
 import { useAlbum } from "./utilites/AlbumContext";
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
     <>
       <ArtistSearchBar />
       {!artistObject.id && <DisplaySongs />}
-      {artistObject.id && <DisplayAlbums />}
+      {artistObject.id && <DisplayArtistInfo />}
     </>
   );
 }

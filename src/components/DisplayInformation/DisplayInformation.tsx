@@ -21,14 +21,17 @@ const InformationSection = (artist: any) => {
     <div className="artist-info">
       <h2 className="artist-name">{artist.name}</h2>
       <div className="artist-footer">
-        <a
-          href={artist?.external_urls?.spotify}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="spotify-button"
-        >
-          Play on Spotify
-        </a>
+        <div className="button-group">
+          <a
+            href={artist?.external_urls?.spotify}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="spotify-button"
+          >
+            Play on Spotify
+          </a>
+          <button className="learn-more-button">Learn More</button>
+        </div>
       </div>
     </div>
   );

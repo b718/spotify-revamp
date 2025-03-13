@@ -138,17 +138,44 @@ body {
   justify-content: center;
 }
 
+.button-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.learn-more-button {
+  padding: 0.5rem 1rem;
+  background-color: #1a1a1a;
+  color: white;
+  border: none;
+  border-radius: 1.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.learn-more-button:hover {
+  background-color: #333;
+  transform: translateY(-0.125rem);
+}
+
+/* Update existing spotify-button to match new layout */
 .spotify-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
   background-color: #1db954;
   color: white;
-  padding: 0.5rem 1rem; /* 8px 16px */
-  border-radius: 1.25rem; /* 20px */
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  border-radius: 1.5rem;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
 }
 
 .spotify-button:hover {
   background-color: #1ed760;
+  transform: translateY(-0.125rem);
 }
 
 .loading {
