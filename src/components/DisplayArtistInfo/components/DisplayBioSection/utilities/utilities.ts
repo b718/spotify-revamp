@@ -1,4 +1,7 @@
 export async function getArtistInfo(artistName: string) {
+  if (artistName === "Drake") {
+    artistName = "Drake (musician)";
+  }
   const url = `https://en.wikipedia.org/w/api.php?action=parse&page=${encodeURIComponent(
     artistName
   )}&format=json&origin=*`;
@@ -12,6 +15,14 @@ export async function getArtistInfo(artistName: string) {
 
     const refs = doc.querySelectorAll(".reference");
     refs.forEach((ref) => ref.remove());
+
+    const links = doc.querySelectorAll("a");
+    links.forEach((link) => {
+      const href = link.getAttribute("href");
+      if (href?.startsWith("/wiki/")) {
+        link.setAttribute("href", `https://wikipedia.org${href}`);
+      }
+    });
 
     const allParagraphs = doc.querySelectorAll("p");
 
