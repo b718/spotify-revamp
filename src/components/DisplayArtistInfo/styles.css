@@ -1,7 +1,7 @@
 .artist-container {
   max-width: 75rem;
   margin: 0 auto;
-  padding: 0;
+  padding: 2rem;
 }
 
 .artist-header {
@@ -113,7 +113,23 @@
   }
 }
 
-.artist-loading {
+.artist-loading,
+.artist-error {
   text-align: center;
-  padding: 1.5rem; /* 24px */
+  padding: 2rem;
+  font-size: 1.25rem;
+  color: #666;
+}
+
+.artist-error {
+  color: #dc2626;
+}
+
+.artist-section {
+  background: white;
+  border-radius: 1rem;
+  border: 0.0625rem solid #e5e7eb;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.05);
 }

@@ -36,9 +36,17 @@ const DisplayArtistInfo = () => {
 
   return (
     <div className="artist-container">
-      <DisplayBioSection />
-      <DisplayTopTracksSection artistTopTracks={artistTopTracks} />
-      <DisplayAlbumsSection artistAlbums={artistAlbums} />
+      <div className="artist-section">
+        <DisplayBioSection />
+      </div>
+
+      <div className="artist-section">
+        <DisplayTopTracksSection artistTopTracks={artistTopTracks} />
+      </div>
+
+      <div className="artist-section">
+        <DisplayAlbumsSection artistAlbums={artistAlbums} />
+      </div>
     </div>
   );
 };

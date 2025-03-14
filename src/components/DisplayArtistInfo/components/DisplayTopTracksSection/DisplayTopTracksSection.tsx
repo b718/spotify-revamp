@@ -25,14 +25,21 @@ const DisplayTopTracksSection = ({
               <h4>{track.name}</h4>
               <p>{track.album.name}</p>
             </div>
-            <span className="track-duration">
-              {formatDuration(track.duration_ms)}
-            </span>
-            {track.preview_url && (
-              <audio controls className="track-preview">
-                <source src={track.preview_url} type="audio/mpeg" />
-              </audio>
-            )}
+            <div className="track-actions">
+              <div className="track-duration">
+                {formatDuration(track.duration_ms)}
+              </div>
+              {track.external_urls.spotify && (
+                <a
+                  href={track.external_urls.spotify}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="spotify-link-display-top-tracks"
+                >
+                  Play on Spotify
+                </a>
+              )}
+            </div>
           </div>
         ))}
       </div>
