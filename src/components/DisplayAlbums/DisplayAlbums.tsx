@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useAlbum } from "../../utilites/AlbumContext";
 import { getArtistsAlbums } from "./utilities/utilites";
 import DisplayInformation from "../DisplayInformation/DisplayInformation";
@@ -16,7 +16,7 @@ const DisplayAlbums = () => {
         setAlbums(data);
         setLoading(false);
       })
-      .catch((err) => {
+      .catch(() => {
         setError("Failed to load albums");
         setLoading(false);
       });

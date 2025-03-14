@@ -34,32 +34,8 @@ const DisplayArtistInfo = () => {
   if (!artistObject.id)
     return <div className="artist-error">Artist not found</div>;
 
-  const formatNumber = (num: number) => {
-    return new Intl.NumberFormat("en-US", { notation: "compact" }).format(num);
-  };
-
   return (
     <div className="artist-container">
-      {/* <div
-        className="artist-header"
-        style={{ backgroundImage: `url(${artistObject.images[0]?.url})` }}
-      >
-        <div className="artist-header-content">
-          <h1>{artistObject.name}</h1>
-          <div className="artist-stats">
-            <span>{formatNumber(artistObject.followers.total)} followers</span>
-            <span>Popularity: {artistObject.popularity}%</span>
-          </div>
-          <div className="artist-genres">
-            {artistObject.genres.map((genre: string) => (
-              <span key={genre} className="genre-tag">
-                {genre}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div> */}
-
       <DisplayBioSection />
       <DisplayTopTracksSection artistTopTracks={artistTopTracks} />
       <DisplayAlbumsSection artistAlbums={artistAlbums} />

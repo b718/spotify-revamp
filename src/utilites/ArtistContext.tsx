@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState, ReactNode } from "react";
 
 interface ArtistContextType {
   currentArtist: string;
@@ -20,8 +20,8 @@ const defaultArtists = [
 ];
 
 const getRandomArtist = () => {
-    const randomIndex = Math.floor(Math.random() * defaultArtists.length);
-    return defaultArtists[randomIndex];
+  const randomIndex = Math.floor(Math.random() * defaultArtists.length);
+  return defaultArtists[randomIndex];
 };
 
 export function ArtistProvider({ children }: { children: ReactNode }) {

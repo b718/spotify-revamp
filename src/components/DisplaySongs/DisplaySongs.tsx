@@ -18,7 +18,7 @@ const DisplaySongs = () => {
         setArtists(data);
         setLoading(false);
       })
-      .catch((err) => {
+      .catch(() => {
         setError("Failed to load songs");
         setLoading(false);
       });
