@@ -4,7 +4,7 @@ import { useAlbum } from "../../../../utilites/AlbumContext";
 import "./styles.css";
 
 const DisplayBioSection = () => {
-  const [artistBio, setArtistBio] = useState<string>("");
+  const [artistBio, setArtistBio] = useState<any>("");
   const [loading, setLoading] = useState(true);
   const { artistObject } = useAlbum();
 
@@ -13,16 +13,24 @@ const DisplayBioSection = () => {
     setLoading(false);
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading || !artistBio) return <div>Loading...</div>;
 
   return (
-    <>
-      <h1>About {artistObject.name}</h1>
+    <div className="bio-wrapper">
+      <h1 className="bio-title">About {artistObject.name}</h1>
       <div
         className="bio-content"
-        dangerouslySetInnerHTML={{ __html: artistBio }}
+        dangerouslySetInnerHTML={{ __html: artistBio.bio.summary }}
       />
-    </>
+      <div className="bio-footer">
+        Last Updated:{" "}
+        {new Date(artistBio.bio.published).toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        })}
+      </div>
+    </div>
   );
 };
 

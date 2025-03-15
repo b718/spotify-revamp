@@ -1,4 +1,83 @@
+.bio-wrapper {
+  padding: 2rem;
+  background: white;
+  border-radius: 1rem;
+}
+
+.bio-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
 .bio-content {
-  line-height: 1.6;
+  font-size: 1.125rem;
+  line-height: 1.8;
   color: #333;
+  margin-bottom: 2rem;
+}
+
+.bio-content a {
+  color: #1db954;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.bio-content a:hover {
+  color: #1ed760;
+  text-decoration: underline;
+}
+
+.bio-footer {
+  font-size: 0.875rem;
+  color: #666;
+  padding-top: 1.5rem;
+  border-top: 0.0625rem solid #eee;
+  font-style: italic;
+}
+
+/* Add some responsive adjustments */
+@media (max-width: 48rem) {
+  .bio-wrapper {
+    padding: 1.5rem;
+  }
+
+  .bio-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .bio-content {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+.bio-content ul,
+.bio-content ol {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.bio-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Add emphasis to important text */
+.bio-content strong,
+.bio-content b {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+/* Style quotes if they appear */
+.bio-content blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+  border-left: 0.25rem solid #1db954;
+  font-style: italic;
+  color: #4a5568;
 }
