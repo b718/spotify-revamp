@@ -23,8 +23,7 @@ This was the first project that got me into programming, so I thought how cool w
 - Netlify (super easy and allows me to deploy in minutes)
 
 ## Video Demo
-It can be accessed [here](https://302e52ea.spotify-revamp-bryanzhao.pages.dev/)!
+
+It can be accessed [here](https://spotify-revamp-bryanzhao.pages.dev/)!
 
 https://github.com/user-attachments/assets/333a3faf-8494-4234-9274-7ec8fe463dcf
-
-
