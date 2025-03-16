@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
-import { getArtistTopTracks, getArtistsAlbums } from "./utilities/utilites";
+import {
+  getArtistTopTracks,
+  getArtistsAlbums,
+  updateArtistSearchCount,
+} from "./utilities/utilites";
 import { useAlbum } from "../../utilites/AlbumContext";
 import DisplayAlbumsSection from "./components/DisplayAlbumsSection/DisplayAlbumsSection";
 import DisplayTopTracksSection from "./components/DisplayTopTracksSection/DisplayTopTracksSection";
@@ -17,8 +21,11 @@ const DisplayArtistInfo = () => {
     const fetchArtistData = async () => {
       setLoading(true);
       try {
-        const artistTopTracks = await getArtistTopTracks(artistObject.id);
-        const artistAlbums = await getArtistsAlbums(artistObject.id);
+        updateArtistSearchCount(artistObject);
+        const [artistTopTracks, artistAlbums] = await Promise.all([
+          getArtistTopTracks(artistObject.id),
+          getArtistsAlbums(artistObject.id),
+        ]);
         setArtistTopTracks(artistTopTracks);
         setArtistAlbums(artistAlbums);
       } catch (error) {

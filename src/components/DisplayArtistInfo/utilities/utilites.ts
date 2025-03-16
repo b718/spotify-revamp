@@ -43,3 +43,23 @@ export async function getArtistsAlbums(name: string) {
   const filteredAlbums = filterNoImages(data.items);
   return filteredAlbums;
 }
+
+interface ArtistObject {
+  id: string;
+  name: string;
+}
+
+export async function updateArtistSearchCount(artistObject: ArtistObject) {
+  fetch(`http://127.0.0.1:8000/artists/${artistObject.id}/searches`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      artistId: artistObject.id,
+      artistName: artistObject.name,
+    }),
+  }).catch((error) => {
+    console.error("Error updating artist search count:", error);
+  });
+}
