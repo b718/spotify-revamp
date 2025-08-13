@@ -20,7 +20,7 @@ This was the first project that got me into programming, so I thought how cool w
 
 ### Deployment
 
-- Netlify (super easy and allows me to deploy in minutes)
+- CloudFlare (super easy and allows me to deploy in minutes)
 
 ## Video Demo
 
